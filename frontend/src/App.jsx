@@ -8,6 +8,7 @@ import Approvals from './pages/Approvals'
 import Vehicles from './pages/Vehicles'
 import Reports from './pages/Reports'
 import ActivityLog from './pages/ActivityLog'
+import Drivers from './pages/Drivers'
 
 const PrivateRoute = ({ children, roles }) => {
   const { user, loading } = useAuth()
@@ -31,6 +32,7 @@ const AppRoutes = () => {
         <Route path="vehicles" element={<PrivateRoute roles={['admin']}><Vehicles /></PrivateRoute>} />
         <Route path="reports" element={<PrivateRoute roles={['admin']}><Reports /></PrivateRoute>} />
         <Route path="activity" element={<PrivateRoute roles={['admin']}><ActivityLog /></PrivateRoute>} />
+        <Route path="drivers" element={<PrivateRoute roles={['admin']}><Drivers /></PrivateRoute>} />
       </Route>
       <Route path="*" element={<Navigate to="/dashboard" />} />
     </Routes>
